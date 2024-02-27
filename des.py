@@ -131,14 +131,17 @@ def main():
     print("\nThe Message:", decrypt_text)
 
     # bytes to string
+   # Convert decrypted_bytes to binary string
     decrypt_bin_str = ''.join(format(byte, '08b') for byte in decrypt_bytes)
-
-    # print output of f function and LnRn in each iteration
-    print("\nf function and LnRn in each iteration:")
+    
+# Print output of f function and LnRn in each iteration
+    print("\nOutput of f function and LnRn in each iteration:")
+    LnRn = decrypt_bin_str[:32], decrypt_bin_str[32:]
     for i in range(16):
-        LnRn = decrypt_bin_str[:32], decrypt_bin_str[32:]
-        f_output = f_function(LnRn[1], round_keys[i])
+        f_output = f_function(LnRn[1], round_keys[i])  # Replace with actual f function
         print(f"Iteration {i + 1}: f_output={f_output}, LnRn={LnRn}")
-
+        # Update LnRn for the next iteration
+        LnRn = LnRn[1], f_output
+ 
 if __name__ == "__main__":
     main()
