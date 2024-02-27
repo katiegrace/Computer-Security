@@ -140,7 +140,7 @@ def main():
 
     decrypt_text = decrypt_bytes.decode('utf-8')
 
-    print("\ndecrypt Message:", decrypt_text)
+    print("\nDecrypted Message:", decrypt_text)
 
     # bytes to string
     decrypt_bin_str = ''.join(format(byte, '08b') for byte in decrypt_bytes)
