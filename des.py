@@ -2,16 +2,6 @@
 # HW 2, Question 6
 
 from Crypto.Cipher import DES
-from Crypto.Util.Padding import pad
-
-def bin_to_text(bin_str):
-    text = ''.join(chr(int(bin_str[i:i+8], 2)) for i in range(0, len(bin_str), 8))
-    return text
-
-def decrypt_des_ecb(ciphtext, key):
-    ciph = DES.new(key, DES.MODE_ECB)
-    decrypt_text = ciph.decrypt(ciphtext)
-    return decrypt_text
 
 def generate_round_keys(key):
     pc1 = [56, 48, 40, 32, 24, 16, 8,
@@ -118,8 +108,6 @@ def f_function(Rn, round_key):
     f_output = ''.join([substituted_bits[permutation_box[i]] for i in range(32)])
 
     return f_output
-
-
 
 def main():
     # given
