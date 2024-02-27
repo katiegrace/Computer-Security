@@ -1,3 +1,6 @@
+# Katie Grace
+# HW 2, Question 6
+
 from Crypto.ciph import DES
 from Crypto.Util.Padding import pad
 
