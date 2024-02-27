@@ -128,16 +128,16 @@ def main():
 
     decrypt_text = decrypt_bytes.decode('utf-8')
 
-    print("\nDecrypted Message:", decrypt_text)
+    print("\nThe Message:", decrypt_text)
 
     # bytes to string
     decrypt_bin_str = ''.join(format(byte, '08b') for byte in decrypt_bytes)
 
     # print output of f function and LnRn in each iteration
-    print("\nOutput of f function and LnRn in each iteration:")
+    print("\nf function and LnRn in each iteration:")
     for i in range(16):
         LnRn = decrypt_bin_str[:32], decrypt_bin_str[32:]
-        f_output = f_function(LnRn[1], round_keys[i])  # Replace with actual f function
+        f_output = f_function(LnRn[1], round_keys[i])
         print(f"Iteration {i + 1}: f_output={f_output}, LnRn={LnRn}")
 
 if __name__ == "__main__":
